@@ -1,0 +1,36 @@
+{
+  "name": "title",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "correspondence": {
+      "type": "number"
+    },
+    "link": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    },
+    "ideas": {
+      "type": "hasMany",
+      "model": "idea",
+      "foreignKey": "titleId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

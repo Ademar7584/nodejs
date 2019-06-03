@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Señales</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="https://criptoanalisis.org/assets/img/logo.png">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <style>
+    div.ex3 {
+      width: 100$;
+      height: 450px;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Historial de señales</h1>
+    <div class="row">
+      <div class="col-6">
+        <table>
+          <tbody>
+          <% 
+          if (signal.tags == null) signal.color = 'text-primary';
+          if (signal.tags == 'caduco') signal.color = 'text-danger';
+          if (signal.tags == 'activo') signal.color = 'text-warning';
+          if (signal.tags == 'exito') signal.color = 'text-success';
+           %> 
+            <% columnSignal.forEach(column => { %>
+            <tr>
+              <td>
+                <%= column %>
+              </td>
+              <td>
+                <%= (typeof signal[column] === 'string' && signal[column].match(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/)) ? moment(signal[column], moment.ISO_8601) : signal[column] %>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-6">
+        <% delete columnPosition[columnPosition.length - 1] %> 
+        <table border="1">
+          <thead>
+            <tr>
+              <% columnPosition.forEach(column => { %>
+                <th class="text-center">
+                  <%= column %>
+                </th>
+              <% }) %>
+            </tr>
+          </thead>
+          <tbody>
+            <% position.forEach(data => { %>
+            <% 
+            if (data.pointId == 1) data.point = 'entrada';
+            if (data.pointId == 2) data.point = 'salida';
+            if (data.pointId == 3) data.point = 'stoploss';
+            data.color = data.reached ? 'bg-success' : 'bg-warning';
+             %> 
+              <tr>
+                <td class="text-capitalize"><%= data.value %></td>
+                <td class="text-capitalize p-3 mb-2 <%= data.color %> text-white"><%= data.reached %></td>
+                <td class="text-capitalize"><%= data.created %></td>
+                <td class="text-capitalize"><%= data.lastUpdated %></td>
+                <td class="text-capitalize"><%= data.point %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 ex3"> 
+        <div class="text-uppercase text-center font-weight-bold <%= signal.color %>" width="100%">
+        >>>>>>>>>>>>>>>>>>>>> <%= signal.tags %>  <<<<<<<<<<<<<<<<<<<<<<<<
+        </div>
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th class="text-center">pointHigh</th>
+              <th class="text-center">pointLow</th>
+              <th class="text-center">inPoint</th>
+              <th class="text-center">outPoint</th>
+              <th class="text-center">stopLoss</th>
+              <th class="text-center">created</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% history.forEach(data => { %>
+              <tr>
+                <td class="text-center"><%= data.pointHigh %> </td>
+                <td class="text-center"><%= data.pointLow %> </td>
+                <td class="text-center"><%= data.inPoint %> </td>
+                <td class="text-center"><%= data.outPoint %> </td>
+                <td class="text-center"><%= data.stopLoss %> </td>
+                <td class="text-center"><%= moment(data.created) %> </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js">
+    
+  </script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

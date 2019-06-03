@@ -1,0 +1,6 @@
+{
+  "extends": "loopback",
+  "rules": {
+    "spaced-comment":"off"
+  }
+}

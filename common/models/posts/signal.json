@@ -1,0 +1,106 @@
+{
+  "name": "signal",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true,
+    "Posts": true
+  },
+  "properties": {
+    "offer": {
+      "type": "boolean",
+      "required": false
+    },
+    "investmentType": {
+      "type": "string",
+      "required": false
+    },
+    "titleSignal": {
+      "type": "string",
+      "required": false,
+      "dataType": "text"
+    },
+    "fundamentalAnalysis": {
+      "type": "string",
+      "required": false,
+      "dataType": "text"
+    },
+    "technicalAnalysis": {
+      "type": "string",
+      "required": false,
+      "dataType": "text"
+    },
+    "exitStrategy": {
+      "type": "string",
+      "required": false,
+      "dataType": "text"
+    },
+    "tags": {
+      "type": "string",
+      "required": false
+    },
+    "precision": {
+      "type": "string",
+      "required": false
+    },
+    "currencyExchange": {
+      "type": "string",
+      "required": false
+    },
+    "exchange": {
+      "type": "string",
+      "required": false
+    },
+    "entryType": {
+      "type": "string",
+      "required": false
+    },
+    "currentPrice": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "coin": {
+      "type": "belongsTo",
+      "model": "coin",
+      "foreignKey": ""
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "comment",
+      "polymorphic": {
+        "foreignKey": "modelId",
+        "discriminator": "modelName"
+      }
+    },
+    "complaint": {
+      "type": "hasMany",
+      "model": "complaint",
+      "polymorphic": {
+        "foreignKey": "modelId",
+        "discriminator": "modelName"
+      }
+    },
+    "position": {
+      "type": "hasMany",
+      "model": "position"
+    },
+    "history": {
+      "type": "hasMany",
+      "model": "HistorySignal"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

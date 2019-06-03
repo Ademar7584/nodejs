@@ -1,0 +1,29 @@
+{
+  "name": "chatRoom",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "groupKey": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

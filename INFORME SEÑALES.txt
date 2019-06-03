@@ -1,0 +1,144 @@
+SEÑALES EN FORMATO SQL
++----+---------+-------+-----------+---------+---------------------+--------------------+
+| id | tags    | offer | entryType | PAIR    | created             | username           |
++----+---------+-------+-----------+---------+---------------------+--------------------+
+| 19 | exito   |     1 | stop      | BTCUSDT | 2018-11-27 13:32:45 | alanfernando93.am  |
+| 20 | NULL    |     1 | limit     | BTCUSDT | 2018-11-27 14:52:51 | alanfernando93.am  |
+| 21 | caduco  |     0 | stop      | IOTABTC | 2018-11-27 14:58:38 | lindaximena1995    |
+| 22 | exito   |     1 | stop      | BTCUSDT | 2018-11-27 15:11:29 | Daniel             |
+| 23 | exito   |     1 | stop      | BTCUSDT | 2018-11-27 15:23:17 | lindaximena1995    |
+| 24 | activo  |     1 | stop      | ETHUSDT | 2018-11-27 15:25:20 | Daniel             |
+| 25 | caduco  |     0 | stop      | ETHBTC  | 2018-11-27 15:31:22 | borischambisantana |
+| 26 | NULL    |     1 | stop      | ETHBTC  | 2018-11-27 15:33:49 | Daniel             |
+| 27 | NULL    |     1 | limit     | BTCUSDT | 2018-11-27 15:36:17 | borischambisantana |
+| 28 | caduco  |     0 | stop      | XRPUSDT | 2018-11-27 15:50:31 | Daniel             |
+| 29 | fracaso |     1 | limit     | EOSBTC  | 2018-11-27 15:51:06 | borischambisantana |
+| 30 | activo  |     1 | stop      | LTCUSDT | 2018-11-27 16:07:33 | Daniel             |
+| 31 | fracaso |     1 | stop      | XRPBTC  | 2018-11-27 16:08:56 | lindaximena1995    |
+| 32 | activo  |     1 | stop      | LTCBTC  | 2018-11-27 16:18:15 | Daniel             |
+| 33 | caduco  |     0 | stop      | BTCUSDT | 2018-11-28 14:16:21 | linda_ximena.c     |
+| 34 | fracaso |     1 | stop      | BTCUSDT | 2018-11-28 14:31:24 | borischambisantana |
+| 35 | caduco  |     0 | stop      | ETHBTC  | 2018-11-28 15:48:54 | borischambisantana |
+| 36 | caduco  |     0 | stop      | XRPBTC  | 2018-11-29 13:56:47 | linda_ximena.c     |
+| 37 | caduco  |     0 | stop      | LTCUSDT | 2018-11-29 14:16:28 | linda_ximena.c     |
+| 38 | activo  |     1 | stop      | BTCUSDT | 2018-11-29 15:45:06 | Daniel             |
+| 39 | activo  |     1 | stop      | TRXUSDT | 2018-11-29 15:58:52 | Daniel             |
+| 40 | activo  |     1 | stop      | TRXBTC  | 2018-11-29 16:18:23 | Daniel             |
+| 41 | NULL    |     1 | stop      | BTCUSDT | 2018-11-29 16:19:32 | borischambisantana |
+| 42 | caduco  |     0 | stop      | ETHBTC  | 2018-11-29 16:25:36 | borischambisantana |
+| 43 | NULL    |     1 | stop      | XLMBTC  | 2018-11-29 16:28:09 | Daniel             |
+| 44 | caduco  |     0 | stop      | EOSBTC  | 2018-11-29 16:33:04 | borischambisantana |
+| 45 | activo  |     1 | stop      | XLMUSDT | 2018-11-29 16:36:41 | Daniel             |
+| 46 | NULL    |     1 | stop      | EOSUSDT | 2018-11-29 16:54:19 | Daniel             |
++----+---------+-------+-----------+---------+---------------------+--------------------+
+
+SEÑAL : 21 | caduco  | VENTA | stop      | IOTABTC | 2018-11-27 14:58:38 | lindaximena1995    |
++----+------------+---------+---------+
+| id | value      | reached | pointId |     
++----+------------+---------+---------+
+| 62 | 0.00006919 |    NULL | ENTRADA |
+| 63 | 0.00006736 |    NULL |  SALIDA |
+| 64 | 0.00007116 |    NULL | STOPLOSS|
++----+------------+---------+---------+
+
+SEÑAL : 25 | caduco  | VENTA | stop      | ETHBTC  | 2018-11-27 15:31:22 | borischambisantana |
++----+----------+---------+---------+
+| id | value    | reached | pointId |
++----+----------+---------+---------+
+| 76 | 0.027228 |    NULL | ENTRADA |
+| 77 | 0.024393 |    NULL |  SALIDA |
+| 78 | 0.030436 |    NULL | STOPLOSS|
++----+----------+---------+---------+
+
+SEÑAL : 28 | caduco  | VENTA | stop      | XRPUSDT | 2018-11-27 15:50:31 | Daniel             |
++----+---------+---------+---------+
+| id | value   | reached | pointId |
++----+---------+---------+---------+
+| 87 | 0.34283 |    NULL | ENTRADA |
+| 88 | 0.26074 |    NULL |  SALIDA |
+| 89 | 0.3     |    NULL |  SALIDA |
+| 90 | 0.4118  |    NULL | STOPLOSS|
++----+---------+---------+---------+
+
+SEÑAL : 33 | caduco  | VENTA | stop      | BTCUSDT | 2018-11-28 14:16:21 | linda_ximena.c     |
++-----+-------+---------+---------+
+| id  | value | reached | pointId |
++-----+-------+---------+---------+
+| 106 | 4142  |    NULL | ENTRADA |
+| 107 | 3735  |    NULL |  SALIDA |
+| 108 | 4262  |    NULL | STOPLOSS|
++-----+-------+---------+---------+
+
+SEÑAL : 35 | caduco  | VENTA | stop      | ETHBTC  | 2018-11-28 15:48:54 | borischambisantana |
++-----+----------+---------+---------+
+| id  | value    | reached | pointId |
++-----+----------+---------+---------+
+| 112 | 0.02769  |    NULL | ENTRADA |
+| 113 | 0.028971 |    NULL | STOPLOSS|
+| 114 | 0.02643  |    NULL |  SALIDA |
++-----+----------+---------+---------+
+
+SEÑAL : 36 | caduco  | VENTA | stop      | XRPBTC  | 2018-11-29 13:56:47 | linda_ximena.c     |
++-----+-------------+---------+---------+
+| id  | value       | reached | pointId |
++-----+-------------+---------+---------+
+| 115 | 0.000085479 |    NULL | ENTRADA |
+| 116 | 0.000077955 |    NULL |  SALIDA |
+| 117 | 0.000095796 |    NULL | STOPLOSS|
++-----+-------------+---------+---------+
+
+SEÑAL : 37 | caduco  | VENTA | stop      | LTCUSDT | 2018-11-29 14:16:28 | linda_ximena.c     |
++-----+-------+---------+---------+
+| id  | value | reached | pointId |
++-----+-------+---------+---------+
+| 118 | 34.08 |    NULL | ENTRADA |
+| 119 | 30.96 |    NULL |  SALIDA |
+| 120 | 35.83 |    NULL | STOPLOSS|
++-----+-------+---------+---------+
+
+SEÑAL : 42 | caduco  | VENTA | stop      | ETHBTC  | 2018-11-29 16:25:36 | borischambisantana |
++-----+----------+---------+---------+
+| id  | value    | reached | pointId |
++-----+----------+---------+---------+
+| 137 | 0.027231 |    NULL | ENTRADA |
+| 138 | 0.026397 |    NULL |  SALIDA |
+| 139 | 0.028917 |    NULL | STOPLOSS|
++-----+----------+---------+---------+
+
+SEÑAL : 44 | caduco  | VENTA | stop      | EOSBTC  | 2018-11-29 16:33:04 | borischambisantana |
++-----+-----------+---------+---------+
+| id  | value     | reached | pointId |
++-----+-----------+---------+---------+
+| 144 | 0.0006783 |    NULL | ENTRADA |
+| 145 | 0.0006336 |    NULL |  SALIDA |
+| 146 | 0.0007336 |    NULL | STOPLOSS|
++-----+-----------+---------+---------+
+====================================================================================================
+
+SEÑAL : 29 | fracaso | COMPRA | limit     | EOSBTC  | 2018-11-27 15:51:06 | borischambisantana |
++----+-----------+---------+---------+
+| id | value     | reached | pointId |
++----+-----------+---------+---------+
+| 91 | 0.0007616 |       1 | ENTRADA |
+| 92 | 0.0008435 |    NULL |  SALIDA |
+| 93 | 0.0007335 |       1 | STOPLOSS|
++----+-----------+---------+---------+
+
+SEÑAL : 31 | fracaso | COMPRA | stop      | XRPBTC  | 2018-11-27 16:08:56 | lindaximena1995    |
++-----+------------+---------+---------+
+| id  | value      | reached | pointId |
++-----+------------+---------+---------+
+|  98 | 0.0000939  |       1 | ENTRADA |
+|  99 | 0.00009591 |    NULL |  SALIDA |
+| 100 | 0.00009421 |    NULL |  SALIDA |
+| 101 | 0.00009273 |       1 | STOPLOSS|
++-----+------------+---------+---------+
+
+SEÑAL : 34 | fracaso | COMPRA | stop      | BTCUSDT | 2018-11-28 14:31:24 | borischambisantana |
++-----+--------+---------+---------+
+| id  | value  | reached | pointId |
++-----+--------+---------+---------+
+| 109 | 4287.5 |       1 | ENTRADA |
+| 110 | 4232.9 |       1 | STOPLOSS|
+| 111 | 4355.5 |    NULL |  SALIDA |
++-----+--------+---------+---------+

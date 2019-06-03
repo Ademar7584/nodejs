@@ -1,0 +1,50 @@
+[
+  {
+    "method": "POST",
+    "model": "Signals",
+    "withData": [{
+      "offer": true,
+      "coinType": "BTC",
+      "currencyExchange": "USD",
+      "userId": 3,
+      "entryType": "stop",
+      "expiration": "2018-12-31",
+      "init": 29,
+      "position": [{
+        "value": 6740,
+        "pointId": 1
+      }, {
+        "value": 8500,
+        "pointId": 2
+      }, {
+        "value": 6650,
+        "pointId": 3
+      }]
+    }, {
+      "offer": true,
+      "coinType": "BTC",
+      "currencyExchange": "USD",
+      "userId": 3,
+      "entryType": "limit",
+      "expiration": "2019-12-26 22:54:55",
+      "init": 95,
+      "position": [{
+        "value": 7500,
+        "pointId": 1
+      }, {
+        "value": 7200,
+        "pointId": 1
+      }, {
+        "value": 8500,
+        "pointId": 2
+      }, {
+        "value": 10000,
+        "pointId": 2
+      }, {
+        "value": 7000,
+        "pointId": 3
+      }]
+    }],
+    "expect": 200
+  }
+]

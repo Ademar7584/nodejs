@@ -1,0 +1,57 @@
+{
+  "name": "comment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "content": {
+      "type": "string"
+    },
+    "modelName": {
+      "type": "string"
+    },
+    "modelId": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    },
+    "answer": {
+      "type": "hasMany",
+      "model": "answer"
+    },
+    "news": {
+      "type": "belongsTo",
+      "polymorphic": {
+        "foreignKey": "modelId",
+        "discriminator": "modelName"
+      }
+    },
+    "signal": {
+      "type": "belongsTo",
+      "polymorphic": {
+        "foreignKey": "modelId",
+        "discriminator": "modelName"
+      }
+    },
+    "advisory": {
+      "type": "belongsTo",
+      "polymorphic": {
+        "foreignKey": "modelId",
+        "discriminator": "modelName"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

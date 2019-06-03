@@ -1,0 +1,56 @@
+{
+  "name": "advisory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true,
+    "Posts": true
+  },
+  "properties": {
+    "title": "string",
+    "location": "string",
+    "modality": "string",
+    "thematic": "string",
+    "coachTerms": "string",
+    "additionalAdvantages": "string",
+    "cost": "number",
+    "language": "string",
+    "hours": "number",
+    "aboutCoach": "string"
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "coin": {
+      "type": "belongsTo",
+      "model": "coin",
+      "foreignKey": ""
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "comment",
+      "polymorphic": {
+        "foreignKey": "modelId",
+        "discriminator": "modelName"
+      }
+    },
+    "complaint": {
+      "type": "hasMany",
+      "model": "complaint",
+      "polymorphic": {
+        "foreignKey": "modelId",
+        "discriminator": "modelName"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

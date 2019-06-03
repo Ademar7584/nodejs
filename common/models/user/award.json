@@ -1,0 +1,41 @@
+{
+  "name": "award",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

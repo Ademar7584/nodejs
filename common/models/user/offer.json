@@ -1,0 +1,27 @@
+{
+  "name": "offer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "type": {
+      "type": "boolean"
+    },
+    "hours": {
+      "type": "number"
+    },
+    "posts": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

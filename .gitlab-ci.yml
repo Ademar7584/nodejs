@@ -1,0 +1,72 @@
+variables:
+  DOCKER_DRIVER: overlay2
+image: criptoanalisis/frontend-gitlab
+
+.docker: &docker
+  tags:
+  - docker
+
+stages:
+  - deploydev
+  - deployprod
+  - databaseDev
+  - databaseProd
+
+Sube Backend Desarrollo:
+  <<: *docker
+  stage: deploydev
+  only:
+    - develop
+  script:
+    - mkdir ~/.ssh
+    - echo "StrictHostKeyChecking no" >> ~/.ssh/config
+    - export SSHPASS=$USER_PASS
+    - rm -rf ./node_modules
+    - npm install --silent
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'pm2 stop server_dev'
+    - sshpass -e rsync -avz --delete --chmod=755 . criptoanalisis@191.101.228.157:/home/criptoanalisis/dev/backend
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'cp -r /home/criptoanalisis/dev/datasources/config.json /home/criptoanalisis/dev/backend/server/config.json'
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'cp -r /home/criptoanalisis/dev/datasources/urlFront.js /home/criptoanalisis/dev/backend/lib/urlFront.js'
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'cp -r /home/criptoanalisis/dev/datasources/datasources.json /home/criptoanalisis/dev/backend/server/datasources.json'
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'pm2 start server_dev'
+
+Sube Backend Produccion:
+  <<: *docker
+  stage: deployprod
+  only:
+    - master
+  script:
+    - mkdir ~/.ssh
+    - echo "StrictHostKeyChecking no" >> ~/.ssh/config
+    - export SSHPASS=$USER_PASS
+    - rm -rf ./node_modules
+    - npm install --silent
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'pm2 stop server_prod'
+    - sshpass -e rsync -avz --delete . criptoanalisis@191.101.228.157:/home/criptoanalisis/prod/backend
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'cp -r /home/criptoanalisis/prod/datasources/config.json /home/criptoanalisis/prod/backend/server/config.json' 
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'cp -r /home/criptoanalisis/prod/datasources/urlFront.js /home/criptoanalisis/prod/backend/lib/urlFront.js'
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'cp -r /home/criptoanalisis/prod/datasources/datasources.json /home/criptoanalisis/prod/backend/server/datasources.json'
+    - sshpass -e ssh criptoanalisis@191.101.228.157 'pm2 start server_prod'
+
+
+Actualiza BD desarrollo:
+  stage: databaseDev
+  only:
+    - develop
+  script:
+    - mkdir ~/.ssh
+    - echo "StrictHostKeyChecking no" >> ~/.ssh/config
+    - export SSHPASS=$USER_PASS
+    - sshpass -e ssh criptoanalisis@191.101.228.157 ' cd /home/criptoanalisis/dev/datasources && bash renewDb && bash fillDb'
+  when: manual
+
+Actualiza BD produccion:
+  stage: databaseProd
+  only:
+    - master
+  script:
+    - mkdir ~/.ssh
+    - echo "StrictHostKeyChecking no" >> ~/.ssh/config
+    - export SSHPASS=$USER_PASS
+    - sshpass -e ssh criptoanalisis@191.101.228.157 ' cd /home/criptoanalisis/prod/datasources && bash backup && bash renewdb && bash fillnewdb'
+  when: manual

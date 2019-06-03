@@ -1,0 +1,36 @@
+{
+  "name": "answer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "content": {
+      "type": "string"
+    },
+    "modelName": {
+      "type": "string"
+    },
+    "modelId": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    },
+    "comment": {
+      "type": "belongsTo",
+      "model": "comment"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

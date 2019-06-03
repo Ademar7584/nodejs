@@ -1,0 +1,59 @@
+{
+  "name": "coin",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "totalSupply": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "mining": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    },
+    "ideas": {
+      "type": "hasMany",
+      "model": "idea",
+      "foreignKey": "coinId"
+    },
+    "project": {
+      "type": "hasMany",
+      "model": "project",
+      "foreignKey": "coinId"
+    },
+    "news": {
+      "type": "hasMany",
+      "model": "new",
+      "foreignKey": "coinId"
+    },
+    "signals": {
+      "type": "hasMany",
+      "model": "signal",
+      "foreignKey": "coinId"
+    },
+    "advisory": {
+      "type": "hasMany",
+      "model": "advisory",
+      "foreignKey": "coinId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

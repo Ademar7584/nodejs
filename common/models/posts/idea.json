@@ -1,0 +1,43 @@
+{
+  "name": "idea",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "content": {
+      "type": "string",
+      "dataType": "text"
+    },
+    "qualidication": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "coin": {
+      "type": "belongsTo",
+      "model": "coin"
+    },
+    "title": {
+      "type": "belongsTo",
+      "model": "title"
+    },
+    "project": {
+      "type": "belongsTo",
+      "model": "project"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

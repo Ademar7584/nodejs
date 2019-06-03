@@ -1,0 +1,30 @@
+{
+  "name": "market",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    },
+    "project": {
+      "type": "hasMany",
+      "model": "project",
+      "foreignKey": "marketId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

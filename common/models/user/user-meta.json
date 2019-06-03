@@ -1,0 +1,26 @@
+{
+  "name": "UserMeta",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "meta_key": {
+      "type": "string"
+    },
+    "meta_value": {
+      "type": "object",
+      "default": "{}"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,115 @@
+[33m[nodemon] 1.18.3[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node server/server.js`[39m
+Web server listening at: http://localhost:3001
+Browse your REST API at http://localhost:3001/explorer
+a user connected
+id : lAUG_xjG866vOUUAAAAA
+{ currency: 'BOB' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server/server.js`[39m
+Web server listening at: http://localhost:3001
+Browse your REST API at http://localhost:3001/explorer
+a user connected
+id : YmZlZdIoLNH3sgJYAAAA
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server/server.js`[39m
+Web server listening at: http://localhost:3001
+Browse your REST API at http://localhost:3001/explorer
+a user connected
+id : DXxgI3ELdhvphWycAAAA
+{ currency: 'BOB' }
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server/server.js`[39m
+Web server listening at: http://localhost:3001
+Browse your REST API at http://localhost:3001/explorer
+a user connected
+id : zEe1W4Yw3rqwVufNAAAA
+{ currency: 'BOB' }
+{ payment_id: 'hj9syigkkrod',
+  payment_url: 'https://khipu.com/payment/info/hj9syigkkrod',
+  app_url: 'khipu:///pos/hj9syigkkrod',
+  ready_for_terminal: false,
+  pay_me_url: 'https://khipu.com/payment/paymeStart/hj9syigkkrod',
+  receiver_id: 208753,
+  notification_token:
+   'febfc68d6ed58f0fda3e68aac2cd4780cf7f4242180315b96ebdeab854ef41e7',
+  subject: 'Test Payment',
+  amount: '2000.0000',
+  discount: '0.0000',
+  currency: 'BOB',
+  status: 'pending',
+  status_detail: 'pending',
+  body: 'This is a test payment',
+  picture_url: '',
+  receipt_url: '',
+  return_url: 'http://localhost:3001/khipu/callback',
+  cancel_url: 'http://localhost:3001/khipu/callback',
+  notify_url: '',
+  notify_api_version: '',
+  expires_date: '2018-11-29T00:48:28.615Z',
+  attachment_urls: [],
+  bank: 'Banco De Demostración',
+  bank_id: 'tUcw7',
+  payer_name: '',
+  payer_email: '',
+  personal_identifier: '',
+  bank_account_number: '',
+  out_of_date_conciliation: false,
+  transaction_id: '12345',
+  custom: 'Custom information',
+  responsible_user_email: 'alan-fernando93@hotmail.com',
+  send_reminders: false,
+  send_email: false,
+  payment_method: 'not_available' }
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server/server.js`[39m
+Web server listening at: http://localhost:3001
+Browse your REST API at http://localhost:3001/explorer
+a user connected
+id : 63rRVb3iW_gCWHBrAAAA
+{ payment_id: 'hj9syigkkrod',
+  payment_url: 'https://khipu.com/payment/info/hj9syigkkrod',
+  app_url: 'khipu:///pos/hj9syigkkrod',
+  ready_for_terminal: false,
+  pay_me_url: 'https://khipu.com/payment/paymeStart/hj9syigkkrod',
+  receiver_id: 208753,
+  notification_token:
+   'febfc68d6ed58f0fda3e68aac2cd4780cf7f4242180315b96ebdeab854ef41e7',
+  subject: 'Test Payment',
+  amount: '2000.0000',
+  discount: '0.0000',
+  currency: 'BOB',
+  status: 'pending',
+  status_detail: 'pending',
+  body: 'This is a test payment',
+  picture_url: '',
+  receipt_url: '',
+  return_url: 'http://localhost:3001/khipu/callback',
+  cancel_url: 'http://localhost:3001/khipu/callback',
+  notify_url: '',
+  notify_api_version: '',
+  expires_date: '2018-11-29T00:48:28.615Z',
+  attachment_urls: [],
+  bank: 'Banco De Demostración',
+  bank_id: 'tUcw7',
+  payer_name: '',
+  payer_email: '',
+  personal_identifier: '',
+  bank_account_number: '',
+  out_of_date_conciliation: false,
+  transaction_id: '12345',
+  custom: 'Custom information',
+  responsible_user_email: 'alan-fernando93@hotmail.com',
+  send_reminders: false,
+  send_email: false,
+  payment_method: 'not_available' }
+[ { bank_id: 'tUcw7',
+    name: 'Banco De Demostración',
+    message:
+     'Este es un banco de pruebas. Las transacciones no son reales.',
+    min_amount: '1.0000',
+    type: 'persona',
+    parent: '' } ]

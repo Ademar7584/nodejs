@@ -1,0 +1,39 @@
+{
+  "name": "position",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "value": {
+      "type": "string"
+    },
+    "capitalPercentage": {
+      "type": "number"
+    },
+    "category": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "reached": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "signal": {
+      "type": "belongsTo",
+      "model": "signal",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

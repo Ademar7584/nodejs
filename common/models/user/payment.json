@@ -1,0 +1,53 @@
+{
+  "name": "payment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "coinType": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "exchange": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "mount": {
+      "type": "string"
+    },
+    "points": {
+      "type": "number"
+    },
+    "type": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    },
+    "commission": {
+      "type": "string"
+    },
+    "modality": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

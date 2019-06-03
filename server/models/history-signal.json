@@ -1,0 +1,37 @@
+{
+  "name": "HistorySignal",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "pointHigh": {
+      "type": "string"
+    },
+    "pointLow": {
+      "type": "string"
+    },
+    "inPoint": {
+      "type": "string"
+    },
+    "outPoint": {
+      "type": "string"
+    },
+    "stopLoss": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "signal": {
+      "type": "belongsTo",
+      "model": "signal"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

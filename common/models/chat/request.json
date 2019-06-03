@@ -1,0 +1,32 @@
+{
+  "name": "request",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {
+    "active": {
+      "type": "boolean"
+    },
+    "accepted": {
+      "type": "boolean"
+    },
+    "expiration": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

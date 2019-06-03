@@ -1,0 +1,26 @@
+{
+  "name": "follow",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    },
+    "follower": {
+      "type": "belongsTo",
+      "model": "user"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,84 @@
+{
+  "name": "news",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "strict": false,
+  "plural": "news",
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true,
+    "Posts": true,
+    "Likes": [
+      {
+        "method": "like",
+        "endpoint": "/:id/like",
+        "likes": "likes",
+        "userModel": "user",
+        "description": " likes news instance for the given userId"
+      },
+      {
+        "method": "dislike",
+        "endpoint": "/:id/dislike",
+        "likes": "dislikes",
+        "userModel": "user",
+        "description": " dislikes news instance for the given userId"
+      }
+    ],
+    "MetaPost": true
+  },
+  "properties": {
+    "title": "string",
+    "guessCoin": {
+      "type": "string"
+    },
+    "guessPrice": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "coin": {
+      "type": "belongsTo",
+      "model": "coin",
+      "foreignKey": ""
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "comment",
+      "polymorphic": {
+        "foreignKey": "modelId",
+        "discriminator": "modelName"
+      }
+    },
+    "complaint": {
+      "type": "hasMany",
+      "model": "complaint",
+      "polymorphic": {
+        "foreignKey": "modelId",
+        "discriminator": "modelName"
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": [
+        "prototype.__get__users"
+      ]
+    }
+  ],
+  "methods": {}
+}

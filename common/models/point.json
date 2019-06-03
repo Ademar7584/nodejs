@@ -1,0 +1,25 @@
+{
+  "name": "point",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "position": {
+      "type": "hasMany",
+      "model": "position"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,52 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "db_cripto",
+    "password": "1234567",
+    "name": "db",
+    "user": "test",
+    "connector": "mysql",
+    "connectionLimit": 100
+  },
+  "db_memory": {
+    "name": "db_memory",
+    "connector": "memory",
+    "file":"../db.json"
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "personalprofecasa@gmail.com",
+          "pass": "4196054m"
+        }
+      }
+    ]
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./storage",
+    "allowedContentTypes": [
+      "image/jpg",
+      "image/jpeg",
+      "image/png",
+      "text/plain",
+      "text/html",
+      "application/pdf"
+    ],
+    "maxFileSize": 20000000000
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "project",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Timestamp": true,
+    "Posts": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user"
+    },
+    "market": {
+      "type": "belongsTo",
+      "model": "market"
+    },
+    "ideas": {
+      "type": "hasMany",
+      "model": "idea",
+      "foreignKey": "projectId"
+    },
+    "coin": {
+      "type": "belongsTo",
+      "model": "coin"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

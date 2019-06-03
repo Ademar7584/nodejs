@@ -1,0 +1,176 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "../common/models/chat",
+      "../common/models/comment",
+      "../common/models/posts",
+      "../common/models/user",
+      "../common/models/exchange",
+      "./models",
+      "./node_modules/loopback-component-passport/lib/models"
+    ],
+    "mixins": [
+      "../node_modules/loopback-likes-mixin/dist",
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "user",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "emailDs"
+  },
+  "UserIdentity": {
+    "dataSource": "db",
+    "public": false
+  },
+  "UserCredential": {
+    "dataSource": "db",
+    "public": false
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
+  },
+  "news": {
+    "dataSource": "db",
+    "public": true
+  },
+  "coin": {
+    "dataSource": "db",
+    "public": true
+  },
+  "market": {
+    "dataSource": "db",
+    "public": true
+  },
+  "signal": {
+    "dataSource": "db",
+    "public": true
+  },
+  "title": {
+    "dataSource": "db",
+    "public": true
+  },
+  "idea": {
+    "dataSource": "db",
+    "public": true
+  },
+  "project": {
+    "dataSource": "db",
+    "public": true
+  },
+  "comment": {
+    "dataSource": "db",
+    "public": true
+  },
+  "answer": {
+    "dataSource": "db",
+    "public": true
+  },
+  "follow": {
+    "dataSource": "db",
+    "public": true
+  },
+  "chat": {
+    "dataSource": "db",
+    "public": true
+  },
+  "complaint": {
+    "dataSource": "db",
+    "public": true
+  },
+  "position": {
+    "dataSource": "db",
+    "public": true
+  },
+  "point": {
+    "dataSource": "db",
+    "public": true
+  },
+  "request": {
+    "dataSource": "db",
+    "public": true
+  },
+  "transaction": {
+    "dataSource": "db",
+    "public": true
+  },
+  "offer": {
+    "dataSource": "db",
+    "public": true
+  },
+  "advisory": {
+    "dataSource": "db",
+    "public": true
+  },
+  "chatRoom": {
+    "dataSource": "db",
+    "public": true
+  },
+  "notification": {
+    "dataSource": "db",
+    "public": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "exchange": {
+    "dataSource": "db",
+    "public": true
+  },
+  "payment": {
+    "dataSource": "db",
+    "public": true
+  },
+  "certificate": {
+    "dataSource": "db",
+    "public": true
+  },
+  "certification": {
+    "dataSource": "db",
+    "public": true
+  },
+  "award": {
+    "dataSource": "db",
+    "public": true
+  },
+  "UserMeta": {
+    "dataSource": "db",
+    "public": false
+  },
+  "HistorySignal": {
+    "dataSource": "db_memory",
+    "public": false
+  }
+}
