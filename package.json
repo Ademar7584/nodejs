@@ -51,7 +51,7 @@
     "ws": "^6.0.0"
   },
   "devDependencies": {
-    "eslint": "^3.17.1",
+    "eslint": "^6.6.0",
     "eslint-config-loopback": "^8.0.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-promise": "^3.8.0",
